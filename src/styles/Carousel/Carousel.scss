@@ -1,0 +1,107 @@
+.Carousel{
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+
+  [data-carousel = 'popular'] .owl-item:hover &-itemCaption{
+    color: $activeCarouselCaption;
+  }
+
+  [data-carousel = 'popular'] {
+    padding: 0 30px;
+  }
+
+
+
+  & .owl-item {
+    text-align: center;
+  }
+
+  &-link{
+    display: block;
+  }
+
+  .owl-carousel .owl-item &-image {
+    display: inline-block;
+    width: auto;
+    height: auto;
+  }
+
+  &-price {
+    color: $priceColor;
+    text-align: center;
+
+    &--value{
+      font-size: 16px;
+    }
+  }
+
+  &-itemCaption {
+    text-align: center;
+    font-size: 14px;
+    color: $black;
+    padding: 5px 0;
+    display: block;
+
+    .owl-thumbs &{
+      font-size: 12px;
+    }
+  }
+
+  &-thumb{
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+
+    &Item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      opacity: 0.4;
+      transition: opacity 0.2s linear;
+      cursor: pointer;
+
+
+      &.active {
+        opacity: 1;
+
+        & ~ & {
+          opacity: 0.4;
+        }
+      }
+
+
+      &Img{
+        border-radius: 3px;
+      }
+    }
+  }
+  &-nav{
+    height: 0;
+    width: 100%;
+  }
+
+  &-prev, &-next {
+    top: 0;
+    position: absolute;
+    height: 100%;
+    right: 0;
+    width: 30px;
+    cursor: pointer;
+
+    & svg {
+      font-size: 30px;
+      position: absolute;
+      top: calc(50% - 30px);
+      right: 5px;
+    }
+  }
+
+  &-prev{
+    left: 0;
+
+    & svg{
+      left: 5px;
+    }
+  }
+}

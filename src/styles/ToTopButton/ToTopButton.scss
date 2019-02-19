@@ -1,0 +1,35 @@
+.ToTopButton {
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  background: rgb(0, 0, 0);
+  background: rgba(255, 255, 255, 0.7);
+  width: 50px;
+  height: 50px;
+  text-decoration: none;
+  border-radius: 35px;
+  display: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 2px 0 rgba(51,51,51,.05),
+  0 1px 4px 0 rgba(51,51,51,.15);
+
+  &:hover {
+    box-shadow: 0 0 2px 0px #2196F3,
+                0 1px 4px 0 rgba(51,51,51,.15);
+
+    & svg {
+      color: #90a4ae;
+      top: 5px;
+    }
+  }
+
+  & svg {
+    color: #90a4ae;
+    margin: 0;
+    position: relative;
+    left: 16px;
+    top: 13px;
+    font-size: 19px;
+    transition: all 0.3s ease;
+  }
+}

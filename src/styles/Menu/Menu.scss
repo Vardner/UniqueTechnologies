@@ -1,0 +1,164 @@
+.Menu {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-size: 16px;
+
+  &-item {
+    display: block;
+    position: relative;
+
+    .Menu-popular & {
+      padding: 15px 5px;
+    }
+  }
+
+  &-link {
+    transition: all .2s ease-in;
+    display: block;
+    padding-left: 10px;
+    height: 39px;
+    line-height: 39px;
+    font-size: 16px;
+    color: $menuAsideTextColor;
+
+    .Menu-item:hover & {
+      color: $menuActiveTextColor;
+      background: $menuAsideActiveBG;
+    }
+
+    .Menu-sub & {
+      background: $menuAsideActiveBG;
+    }
+
+    .Menu-sub & {
+      color: $menuBaseColor;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, .3);
+        color: $menuAsideTextColor;
+      }
+    }
+  }
+
+  &-imageBox {
+    display: block;
+    height: auto;
+    text-align: center;
+    line-height: normal;
+    color: $menuPopularTextColor;
+    background: $menuPopularItemBG;
+
+    &:hover {
+      color: $menuPopularActiveText;
+    }
+
+    & > img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  &-icon {
+    transition: all 0.3s ease-in;
+    font-size: 25px;
+    box-sizing: content-box;
+    margin-bottom: -3px;
+    padding-right: 10px;
+    color: white;
+
+    .Menu-item:hover & {
+      color: $white;
+    }
+
+    &--blue {
+      color: blue;
+    }
+
+    &--red {
+      color: red;
+    }
+
+    &--green {
+      color: green;
+    }
+
+    &--orange {
+      color: orange;
+    }
+
+    &--pink {
+      color: pink;
+    }
+
+    .Menu-sub & {
+      display: none;
+
+      @media (min-width: 320px) and (max-width: 640px) {
+        display: inline-block;
+      }
+    }
+  }
+
+  &-text {
+    font-size: 16px;
+
+    .Menu-popular & {
+      font-size: 13px;
+    }
+  }
+
+  &-sub {
+    @include clearfix();
+    padding-bottom: 10px;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    transition: all 0.2s linear;
+    background: $menuAsideSubBG;
+    z-index: 2;
+    width: 750px;
+    box-shadow: $whiteBlockShadow;
+
+    & ul{
+      padding: 10px 0 15px;
+
+      @media (min-width: 320px) and (max-width: 640px) {
+        padding: 0;
+      }
+    }
+
+    .Menu-item:hover & {
+      visibility: visible;
+      opacity: 1;
+      position: absolute;
+
+      @media (min-width: 320px) and (max-width: 640px) {
+        position: static;
+        display: block;
+      }
+    }
+
+
+    @media (min-width: 320px) and (max-width: 640px) {
+      display: none;
+      background: transparent;
+      width: 100%;
+      padding-bottom: 0;
+
+      & .Menu-link {
+        color: $menuAsideTextColor;
+      }
+    }
+  }
+
+  &-popular{
+    background: $menuPopularBG;
+
+    @media (min-width: 320px) and (max-width: 640px) {
+      display: none;
+    }
+  }
+}

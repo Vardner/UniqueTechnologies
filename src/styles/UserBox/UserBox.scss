@@ -1,0 +1,47 @@
+.UserBox{
+  font-size: 14px;
+  color: $UserBoxText;
+  line-height: 60px;
+
+  &-language, &-location{
+    display: inline-block;
+    vertical-align: sub;
+  }
+
+  &-city{
+    @media (min-width: 320px) and (max-width: 640px) {
+      display: none;
+    }
+  }
+
+  header &-language{
+    padding-left: 35px;
+
+    @media (min-width: 320px) and (max-width: 640px) {
+      display: none;
+    }
+  }
+
+  header &-location {
+    @media (min-width: 320px) and (max-width: 640px) {
+      position: absolute;
+      right: -15px;
+      bottom: 0;
+    }
+  }
+
+  footer &-language {
+    padding-left: 20px;
+  }
+
+  &-active{
+    cursor: pointer;
+    color: $UserBoxActiveColor;
+  }
+
+  &-icon{
+    color: $UserBoxIconColor;
+    font-size: 16px;
+    vertical-align: sub;
+  }
+}

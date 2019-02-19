@@ -1,0 +1,89 @@
+body {
+  background-color: #F8F8F8 !important;
+}
+
+.wrapper {
+  max-width: 1280px;
+  min-width: 300px;
+  position: relative;
+  padding: 0 10px;
+  margin: 0 auto;
+  @include clearfix();
+
+  .Header > & {
+    max-height: 60px;
+  }
+}
+
+.row{
+  position: relative;
+  margin: 0px -10px;
+  display: flex;
+  flex-wrap: wrap;
+  @include clearfix();
+}
+
+@for $i from 1 through 12 {
+  .cell-#{$i} {
+    width: 8.33333333333333333333333% * $i;
+    float: left;
+    padding: 0 10px;
+    @include clearfix();
+  }
+}
+
+@for $i from 1 through 12 {
+  .cell-xs-#{$i} {
+    @media (min-width: 320px) and (max-width: 640px) {
+      width: 8.33333333333333333333333% * $i;
+      float: left;
+      padding: 0 10px;
+      @include clearfix();
+    }
+  }
+}
+
+.cell-xs {
+  @media (min-width: 320px) and (max-width: 480px) {
+    width: 100%;
+  }
+}
+
+.cell-sm-none {
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.whiteBox {
+  background-color: $white;
+  box-shadow: $whiteBlockShadow;
+  padding: 10px;
+}
+
+.row-stretch {
+  margin: 0 -10px;
+}
+
+.clearboth {
+  clear: both;
+}
+
+.mb-15 {
+  margin-bottom: 15px;
+}
+
+.shadow {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+  background: $shadowBG;
+
+  &.active {
+    display: block;
+  }
+}

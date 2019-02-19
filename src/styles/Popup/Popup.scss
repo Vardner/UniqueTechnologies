@@ -1,0 +1,72 @@
+.Popup {
+  display: none;
+  margin: 5% auto 0;
+  position: relative;
+  background-color: $popupBG;
+  width: 600px;
+  font-size: 14px;
+  border-radius: 3px;
+
+  &.active{
+    display: block;
+
+    @media (min-width: 320px) and (max-width: 640px) {
+      transform: translateX(0);
+    }
+  }
+
+  &-close{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 26px;
+    padding: 15px;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  &-text{
+    margin: 0;
+    padding-bottom: 5x;
+  }
+
+  &-title {
+    padding: 5px 0 10px;
+    font-size: 20px;
+  }
+
+  &-form{
+    width: 100%;
+    padding-bottom:10px;
+  }
+
+  &-input{
+    padding: 5px;
+    border: 1px solid $popupInputBorder;
+    border-radius: 3px;
+    width: 100%;
+  }
+
+  &-link {
+    display: block;
+    color: $popupBaseColor;
+    margin-bottom: 5px;
+
+    &:hover {
+      color: $popupActiveColor;
+    }
+
+    & span {
+      color: inherit;
+    }
+  }
+  
+  @media (min-width: 320px) and (max-width: 640px) {
+    left:0;
+    transform: translateX(-100%);
+    transition: transform 0.3s linear;
+    width: 90%;
+    height: 100%;
+    margin: 0;
+  }
+}

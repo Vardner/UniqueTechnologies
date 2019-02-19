@@ -1,0 +1,134 @@
+.Footer {
+  flex: 0 0 auto;
+  background: $footerBG;
+  color: $footerBaseColor;
+  font-size: 14px;
+  padding-top: 30px;
+
+  &-logo {
+    width: 100%;
+    height: auto;
+    max-width: 100px;
+  }
+
+  &-language {
+    vertical-align: bottom;
+    display: inline-block;
+    padding-left: 15px;
+  }
+
+  &-title {
+    font-size: 16px;
+  }
+
+  &-angleIcon {
+    display: none;
+    transition: all 0.2s ease-in-out;
+    color: #8EB4F0;
+    position: absolute;
+    font-size: 18px;
+    left: 0;
+    bottom: calc(50% - 9px);
+
+    @media (min-width: 320px) and (max-width: 640px) {
+      display: block;
+    }
+
+    &.active {
+      transform: rotate(90deg);
+    }
+  }
+
+  &-socials {
+    @include clearfix();
+
+    &Item {
+      padding-right: 5px;
+      float: left;
+    }
+
+    &Orb {
+      width: 45px;
+      height: 45px;
+      line-height: 45px;
+      display: block;
+      text-align: center;
+      font-size: 19px;
+      border-radius: 50%;
+      color: $white;
+      transition: transform 0.25s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &--fb {
+        background: $orbFacebookBG;
+      }
+
+      &--gp {
+        background: $orbGooglePlusBG;
+      }
+
+      &--tw {
+        background: $orbTwitterBG;
+      }
+
+      &--yt {
+        background: $orbYoutubeBG;
+      }
+    }
+
+    @media (min-width: 320px) and (max-width: 640px) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &-list {
+    &Caption {
+      position: relative;
+
+      @media (min-width: 320px) and (max-width: 640px) {
+        padding: 10px 15px;
+      }
+    }
+    & li {
+      padding-bottom: 5px;
+    }
+
+    &Item {
+      &Link {
+        position: relative;
+
+        & span {
+          transition: color 0.25s linear;
+        }
+
+        &:hover span {
+          color: $footerActiveLink;
+        }
+
+        .Footer-list--icons & {
+          padding-left: 25px;
+        }
+
+        & svg {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+        }
+      }
+    }
+
+    @media (min-width: 320px) and (max-width: 640px) {
+      display: none;
+      padding: 0 0 15px;
+      border-bottom: 1px solid white;
+      margin-bottom: 15px;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+}

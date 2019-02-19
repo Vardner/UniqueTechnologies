@@ -1,0 +1,8 @@
+.Aside {
+  min-width: 300px;
+  float: left;
+
+  @media (min-width: 320px) and (max-width: 640px) {
+    float: initial;
+  }
+}

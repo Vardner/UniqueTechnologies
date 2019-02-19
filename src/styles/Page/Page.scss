@@ -1,0 +1,104 @@
+.Page {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+
+  &-content {
+    flex: 1 0 auto;
+  }
+
+  &-searchLine {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  &-categories {
+    &Caption {
+      color: $white;
+      padding: 15px;
+      background-color: $pageMainColor;
+      font-size: 18px;
+      line-height: 100%;
+      text-transform: uppercase;
+      position: relative;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+      min-width: 300px;
+      float: left;
+
+      @media (min-width: 320px) and (max-width: 640px) {
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 4px;
+      }
+    }
+
+    &AngleIcon {
+      position: absolute;
+      right: 20px;
+      top: 12px;
+      font-size: 24px;
+    }
+  }
+
+  &-search {
+    position: relative;
+    flex-grow: 1;
+    height: 48px;
+
+
+    &Input {
+      height: 100%;
+      width: 100%;
+      padding: 0 10px;
+      border-top: 1px solid $pageMainColor;
+      border-bottom: 1px solid $pageMainColor;
+      font-size: 16px;
+      border-bottom-right-radius: 3px;
+      border-top-right-radius: 3px;
+
+      &::placeholder {
+        color: $placeholderColor;
+      }
+
+      @media (min-width: 320px) and (max-width: 640px) {
+        border: 1px solid $pageMainColor;
+        border-radius: 0 ;
+      }
+    }
+
+    &Submit {
+      background-color: $pageMainColor;
+      text-align: center;
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 10px;
+      border-radius: 3px;
+      width: 48px;
+      height: 48px;
+
+
+      @media (min-width: 320px) and (max-width: 640px) {
+        background-color: transparent;
+        border-radius: 0;
+      }
+    }
+
+    &Icon{
+      position: absolute;
+      color: $white;
+      font-size: 22px;
+      top: calc(50% - 11px);
+      right: 13px;
+
+      @media (min-width: 320px) and (max-width: 640px) {
+        background-color: $white;
+        color: $pageMainColor;
+      }
+    }
+  }
+
+  &-aside {
+    width: 300px;
+  }
+}
